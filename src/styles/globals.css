@@ -8,9 +8,11 @@
   --base-color: #F6F6F6;
   --base-text-color: #080D1B;
   --base-cont: #080D1B;
-  --main-color: #fbe5e7;
+  --main-color: #2E86F5;
+  --main-color-rgb: 46,134,245;
+  --main-color-dark: #1F6BD3;
   --main-color-cont: #FFF;
-  --accent-color: #A69463;
+  --accent-color: #F5A521;
   --accent-cont: #FFF;
   --max-width: 1280px;
   --breakpoint-sm: 640px;
@@ -24,7 +26,8 @@ body {
   letter-spacing: 0.2em;
   overflow-x: hidden;
   max-width: 100%;
-  font-family: "Source Han Serif", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Arial", "Meiryo", sans-serif;
+  /* font-family: "Source Han Serif", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Arial", "Meiryo", sans-serif; */
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
 main {
   padding-bottom: 3rem;
@@ -60,9 +63,9 @@ a {
   color: var(--base-text-color);
   transition: 300ms;
 }
-a:hover {
+/* a:hover {
   opacity: 0.8;
-}
+} */
 img {
   max-width: 100%;
 }
@@ -74,21 +77,6 @@ button:disabled {
 button:disabled:hover {
   background: #acacac;
   color: #FFF;
-}
-
-ul li, .list .list-item {
-  padding: 0.5rem 0 0.5rem 1rem;
-  position: relative;
-}
-ul li::before, .list .list-item::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 1.25rem;
-  left: 0;
-  background: var(--accent-color);
-  width: 8px;
-  height: 2px;
 }
 
 input:not([type="checkbox"]), textarea {
@@ -111,6 +99,37 @@ label {
 
 iframe {
   max-width: 100%;
+}
+
+li {
+  position: relative;
+  padding: 0.5rem;
+  padding-left: 2rem;
+}
+
+li::before, li::after {
+  content: '';
+  display: block;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 15px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+li::before {
+  top: calc(50% - 6px);
+  left: 0;
+  background: rgba(var(--main-color-rgb), 0.7);
+}
+li::after {
+  top: 50%;
+  left: 6px;
+  background: rgba(var(--main-color-rgb), 0.5);
+}
+
+th, td {
+  border: none;
+  border-bottom: 1px solid var(--main-color);
 }
 
 .text {

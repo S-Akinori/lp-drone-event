@@ -9,31 +9,12 @@ const Footer = () => {
   return (
     <footer className="py-12 px-4 border-t border-main bg-main w-full">
       <Container className="mb-8 w-max text-center md:w-auto md:text-left">
-        <div className="flex justify-between">
-          <div className="text-3xl font-en">RING RING</div>
-          <div>
-            <div className="mb-4">{company.address}</div>
-            <div className="flex justify-center mb-4 md:justify-start">
-              {media && media.map(item => (
-                <div key={item.id} className="pr-4"><a href={item.href} target="_blank" rel="noreferrer">
-                  <Image
-                    src={item.src}
-                    width={40}
-                    height={40}
-                    alt={item.linkText}
-                  />
-                </a></div>
-              ))}
-            </div>
-            <div><Button href="/contact">お問い合わせはこちら</Button></div>
-          </div>
+        <div className="flex justify-center">
+          <div className="text-3xl font-en text-center">LOGO</div>
         </div>
       </Container>
-      <Container className="mb-8">
-          <Nav nav={fnav} />
-      </Container>
       <Container>
-        <div className="text-sm text-center">&copy; 2022 Ring Ring</div>
+        <div className="text-sm text-center">&copy; 2022 logo</div>
       </Container>
     </footer>
   )

@@ -10,18 +10,17 @@ const Header = () => {
   const [open, setOpen] = useState<boolean | undefined>(undefined)
   return (
     <>
-      <header className="flex items-center fixed top-0 z-40 px-4 bg-main border-b border-main w-full h-16">
+      <header className="flex items-center fixed top-0 z-40 px-4 w-full h-16">
         <div className='flex justify-between items-center w-full'>
-          <div><Link href='/'>RING RING</Link></div>
-          <Nav className='hidden lg:block' nav={gnav} />
+          <div>logo</div>
+          {/* <Nav className='hidden lg:block' nav={gnav} /> */}
           <div className='flex items-center'>
-            <div className='pr-2'><Button href="/contact">お問い合わせ</Button></div>
-            <div className='lg:hidden cursor-pointer' onClick={() => setOpen(!open)}><MenuIcon /></div>
+            <div className='pr-2'><Button href="#contact" shape='rounded'>申し込む</Button></div>
+            {/* <div className='lg:hidden cursor-pointer' onClick={() => setOpen(!open)}><MenuIcon /></div> */}
           </div>
         </div>
-        <NavSP open={open} setOpen={setOpen} nav={gnav} />
+        {/* <NavSP open={open} setOpen={setOpen} nav={gnav} /> */}
       </header>
-      <div className="h-16"></div>
     </>
   )
 }
