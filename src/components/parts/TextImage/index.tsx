@@ -44,7 +44,7 @@ const TextImage = ({children, title, image, direction = 'row'}: Props) => {
           left: 3.3rem;
           width: 1.5rem;
           height: 1.5rem;
-          border-right: 3.5px solid var(--main-color);
+          border-right: 3px solid var(--main-color);
           transform: rotate(45deg);
         }  
       `}</style>

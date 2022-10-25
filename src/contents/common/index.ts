@@ -9,5 +9,8 @@ export const media = [
 
 export const company = {
   name: '株式会社imp',
-  address: '〒166-0012 東京都杉並区和田2-33-5'
+  address: '〒166-0012 東京都杉並区和田2-33-5',
+  tel: '080-8499-7385',
+  email: 'contact@impre.jp',
+  url: 'https://impre.jp'
 }

@@ -15,6 +15,7 @@ import ContactForm from 'src/components/templates/ContactForm'
 import FVContents from 'src/components/templates/FVContents'
 import Layout from 'src/components/templates/Layout'
 import Member from 'src/components/templates/Member'
+import { actionTitleContent } from 'src/contents/action'
 import { FAQContents, FAQTitleContent } from 'src/contents/faq'
 import { formTitleContent } from 'src/contents/form'
 import { infoContents, infoTitleContent } from 'src/contents/info'
@@ -60,7 +61,7 @@ const Home: NextPage = () => {
         </Container>
       </div>
       <Container className='py-12'>
-        <Title>ドローンとプログラミングの魅力を<br />知れるのはこのイベントだけ！！</Title>
+        <Title>{actionTitleContent.title}</Title>
         <div className='text-center'><Button href='#info'>ドローンイベントの詳細を見る</Button></div>
       </Container>
       <div className='bg-gray-100'>

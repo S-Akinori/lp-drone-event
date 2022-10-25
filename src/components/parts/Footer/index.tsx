@@ -7,14 +7,14 @@ import { fnav } from "src/contents/footer";
 
 const Footer = () => {
   return (
-    <footer className="py-12 px-4 border-t border-main bg-main w-full">
+    <footer className="py-12 px-4 bg-base w-full">
       <Container className="mb-8 w-max text-center md:w-auto md:text-left">
         <div className="flex justify-center">
-          <div className="text-3xl font-en text-center">LOGO</div>
+        <div><Image src="/images/logo.png" width={120} height={60} /></div>
         </div>
       </Container>
       <Container>
-        <div className="text-sm text-center">&copy; 2022 logo</div>
+        <div className="text-sm text-center">&copy; 2022 imp</div>
       </Container>
     </footer>
   )

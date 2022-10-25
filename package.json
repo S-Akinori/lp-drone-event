@@ -12,14 +12,17 @@
     "clsx": "^1.2.1",
     "dedent": "^0.7.0",
     "next": "12.1.6",
+    "nodemailer": "^6.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.38.0",
+    "react-intersection-observer": "^9.4.0",
     "ts-dedent": "^2.2.0"
   },
   "devDependencies": {
     "@types/dedent": "^0.7.0",
     "@types/node": "18.0.0",
+    "@types/nodemailer": "^6.4.6",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
