@@ -101,6 +101,8 @@ export default async function handler(
       subject: messageData.header,
       text: messageData.text,
     });
+    console.log(info.messageId);
+    console.log(notification.messageId);
   }
   res.status(200).json({ message: 'success'})
 }
