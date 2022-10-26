@@ -27,7 +27,7 @@ export const infoContents = [
   {
     id: '5',
     title: '参加費用',
-    text: '1,500円'
+    text: '3,000円'
   },
   {
     id: '6',

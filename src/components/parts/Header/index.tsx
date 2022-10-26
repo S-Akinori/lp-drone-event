@@ -24,7 +24,7 @@ const Header = ({background = 'none'}: Props) => {
           <div><Image src="/images/logo.png" width={120} height={60} /></div>
           {/* <Nav className='hidden lg:block' nav={gnav} /> */}
           <div className='flex items-center'>
-            <div><Button href="#contact" shape='rounded'>申し込む</Button></div>
+            <div><Button href="#contact" shape='rounded' className='py-2'>申し込む</Button></div>
             {/* <div className='lg:hidden cursor-pointer' onClick={() => setOpen(!open)}><MenuIcon /></div> */}
           </div>
         </div>

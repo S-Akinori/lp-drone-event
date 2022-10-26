@@ -13,8 +13,9 @@ interface Props extends CommonProps {
   children: React.ReactNode
   color?: 'base' | 'main' | 'accent'
   shape?: 'default' | 'rounded'
+  disabled?: boolean
 }
-const Button = ({href, className = '', style, type = undefined, target, children, query, color = 'main', shape = 'default'}:Props) => {
+const Button = ({href, className = '', style, type = undefined, target, children, query, color = 'main', shape = 'default', disabled}:Props) => {
   const btnClass = `inline-block relative py-4 px-8 duration-300 ${className}`;
   const colorClass = {
     base: 'bg-base-color text-base-cont',
@@ -36,7 +37,7 @@ const Button = ({href, className = '', style, type = undefined, target, children
           transform: translateY(6px);
         }
       `}</style>
-      {href === undefined && <button type={type} className={clsx([btnClass, colorClass[color], shapeClass[shape]])} style={style}>{children}</button>}
+      {href === undefined && <button type={type} disabled={disabled} className={clsx([btnClass, colorClass[color], shapeClass[shape]])} style={style}>{children}</button>}
       {(href !== undefined && href.indexOf('#') == -1) && <Link href={{pathname: href, query: query}} target={target}><a className={clsx([btnClass, colorClass[color], shapeClass[shape]])} style={style}>{children}</a></Link>}
       {(href !== undefined && href.indexOf('#') != -1) && <AnchorLink href={href} className={clsx([btnClass, colorClass[color], shapeClass[shape]])} style={style}>{children}</AnchorLink>}
     </>

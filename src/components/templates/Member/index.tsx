@@ -36,12 +36,14 @@ const Member = ({children, image, name, kana, info}: Props) => {
           }
         }
       `}</style>
-      <div className="md:flex">
+      <div className="md:flex mb-12">
         <div className="p-4 w-80 mx-auto aspect-square shrink-0"><Image className="rounded-full" {...image} /></div>
         <div className="textContainer relative p-6 mt-8 md:ml-8 border-2 border-main rounded-lg">
-          <div className="border-b border-main mb-4 pb-4">
-            <div className="text-xl font-bold">{name}</div>
-            <div className="text-sm">{kana}</div>
+          <div className="border-b border-main mb-4 pb-2">
+            <div className="mb-2">
+              <div className="text-xl font-bold">{name}</div>
+              <div className="text-sm">{kana}</div>
+            </div>
             <div>{info}</div>
           </div>
           <div className="whitespace-pre-wrap">{children}</div>

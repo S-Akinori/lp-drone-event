@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       </div>
       <Container className='py-12'>
         <Title>{memberTitleContent.title}</Title>
-        <div className='md:flex'>
+        <div>
           {memberContents.map(item => (
             <Member key={item.id} name={item.name} kana={item.kana} info={item.info} image={item.image}>{item.text}</Member>
           ))}
