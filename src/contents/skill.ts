@@ -1,6 +1,12 @@
+import dedent from "dedent"
+
 export const skillTitleContent = {
   title: 'ドローンとプログラミングには\n他にない多くの学びがあります',
-  text: '学校では得られない学びがここにあります。\nドローンもプログラミングもこれからどんどん身近になっていきます。\nそして何より、「楽しい」ものだと肌で感じてほしいです。'
+  text: dedent`
+    ドローンとプログラミングを掛け合わせたときの学びは無限大！
+    様々な力が伸びるのはもちろん、今後「やりたい！」という
+    モチベーションを掻き立てます。
+  `
 }
 
 export const skillContents = [

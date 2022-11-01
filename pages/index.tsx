@@ -7,6 +7,7 @@ import Title from 'src/components/atoms/Title'
 import Accordion, { AccordionItem } from 'src/components/parts/Accordion'
 import Box from 'src/components/parts/Box'
 import Container from 'src/components/parts/Container'
+import FadeIn from 'src/components/parts/FadeIn'
 import FV from 'src/components/parts/FV'
 import Table, { TableCell, TableRow } from 'src/components/parts/Table'
 import TextImage from 'src/components/parts/TextImage'
@@ -15,6 +16,7 @@ import ContactForm from 'src/components/templates/ContactForm'
 import FVContents from 'src/components/templates/FVContents'
 import Layout from 'src/components/templates/Layout'
 import Member from 'src/components/templates/Member'
+import SkillsContents from 'src/components/templates/SkillsContents'
 import { actionTitleContent } from 'src/contents/action'
 import { FAQContents, FAQTitleContent } from 'src/contents/faq'
 import { formTitleContent } from 'src/contents/form'
@@ -31,92 +33,111 @@ const Home: NextPage = () => {
       <FV src="/images/fv-top.jpg"><FVContents /></FV>
       <Container className='py-12'>
         <div className='md:w-max mx-auto mb-12'>
-          <Title>{intro.title}</Title>
-          <div className="whitespace-pre-wrap">{intro.text}</div>
+          <FadeIn option={{threshold: 1.0, triggerOnce: true}}>
+            <Title>{intro.title}</Title>
+            <div className="whitespace-pre-wrap">{intro.text}</div>
+          </FadeIn>
         </div>
         <div>
           {introContents.map((item, index) => (
-            <TextImage key={item.id} title={item.title} image={item.image} direction={index % 2 === 1 ? 'row-reverse' : undefined}>{item.text}</TextImage>
+            <FadeIn key={item.id}>
+              <TextImage key={item.id} title={item.title} image={item.image} direction={index % 2 === 1 ? 'row-reverse' : undefined}>{item.text}</TextImage>
+            </FadeIn>
           ))}
         </div>
       </Container>
       <div className='bg-gray-100 py-12'>
         <Container>
-            <div className='md:w-max mx-auto mb-12'>
+          <div className='md:w-max mx-auto mb-12'>
+            <FadeIn>
               <Title>{skillTitleContent.title}</Title>
               <div className="whitespace-pre-wrap">{skillTitleContent.text}</div>
-            </div>
-            <div className='relative flex justify-around flex-wrap md:block md:max-w-screen-sm md:mx-auto md:my-40 md:aspect-square md:border border-base-cont md:rounded-full'>
-              <Box className="bg-white hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className='text-lg font-bold text-center'>プログラミング的<br />思考</div>
-              </Box>
-              {skillContents.map(item => (
-                <Box key={item.id} className={clsx(['bg-white mb-4 w-60 md:absolute', item.className])}>
-                  <div className='text-center'><Image {...item.image} /></div>
-                  <div className='text-lg font-bold text-center'>{item.title}</div>
-                  <div className='text-center whitespace-pre-wrap'>{item.text}</div>
-                </Box>
-              ))}
-            </div>
+            </FadeIn>
+            <SkillsContents />
+          </div>
         </Container>
       </div>
       <Container className='py-12'>
-        <Title>{actionTitleContent.title}</Title>
-        <div className='text-center'><Button href='#info'>ドローンイベントの詳細を見る</Button></div>
+        <FadeIn>
+          <Title>{actionTitleContent.title}</Title>
+          <div className='text-center'><Button href='#info'>ドローンイベントの詳細を見る</Button></div>
+        </FadeIn>
       </Container>
       <div className='bg-gray-100'>
         <Container className='py-12'>
-          <Title>{interestTitleContent.title}</Title>
-          <ul className='bg-white p-4 md:flex flex-wrap'>
-            {interestContents.map(item => (
-              <li key={item.id} className="md:w-1/2">{item.text}</li>
-            ))}
-          </ul>
+          <FadeIn>
+            <Title>{interestTitleContent.title}</Title>
+            <ul className='bg-white p-4 md:flex flex-wrap'>
+              {interestContents.map((item, index) => (
+                <li key={item.id} className="md:w-1/2">{item.text}</li>
+              ))}
+            </ul>
+          </FadeIn>
         </Container>
         <Container className='py-12'>
-          <Title>{meritTitleContent.title}</Title>
+          <FadeIn>
+            <Title>{meritTitleContent.title}</Title>
+          </FadeIn>
           <div className='md:flex'>
-            {meritContents.map(item => (
+            {meritContents.map((item, index) => (
               <div key={item.id} className='md:w-1/3'>
-                <TextImage title={item.title} image={item.image} direction="col">{item.text}</TextImage>
+                <FadeIn key={item.id} delay={300 * (index + 1)}>
+                  <TextImage title={item.title} image={item.image} direction="col">{item.text}</TextImage>
+                </FadeIn>
               </div>
             ))}
           </div>
         </Container>
       </div>
       <Container className='py-12'>
-        <Title>{memberTitleContent.title}</Title>
+        <FadeIn>
+          <Title>{memberTitleContent.title}</Title>
+        </FadeIn>
         <div>
           {memberContents.map(item => (
-            <Member key={item.id} name={item.name} kana={item.kana} info={item.info} image={item.image}>{item.text}</Member>
+            <FadeIn key={item.id}>
+              <Member name={item.name} kana={item.kana} info={item.info} image={item.image}>{item.text}</Member>
+            </FadeIn>
           ))}
         </div>
       </Container>
       <div className='bg-gray-100' id='info'>
         <Container className='py-12'>
-          <Title>{infoTitleContent.title}</Title>
-          <Table className='whitespace-pre-wrap'>
-            {infoContents.map(item => (
-              <TableRow key={item.id}>
-                <TableCell th>{item.title}</TableCell>
-                <TableCell>{item.text}</TableCell>
-              </TableRow>
-            ))}
-          </Table>
+          <FadeIn>
+            <Title>{infoTitleContent.title}</Title>
+          </FadeIn>
+          <FadeIn option={{threshold: 0.2, triggerOnce: true}}>
+            <Table className='whitespace-pre-wrap'>
+              {infoContents.map(item => (
+                <TableRow key={item.id}>
+                  <TableCell th>{item.title}</TableCell>
+                  <TableCell>{item.text}</TableCell>
+                </TableRow>
+              ))}
+            </Table>
+          </FadeIn>
         </Container>
       </div>
       <Container className='py-12'>
-        <Title>{FAQTitleContent.title}</Title>
-        <Accordion>
-          {FAQContents.map(item => (
-            <AccordionItem key={item.id} title={item.question}>{item.answer}</AccordionItem>
-          ))}
-        </Accordion>
+        <FadeIn>
+          <Title>{FAQTitleContent.title}</Title>
+        </FadeIn>
+        <FadeIn>
+          <Accordion>
+            {FAQContents.map(item => (
+              <AccordionItem key={item.id} title={item.question}>{item.answer}</AccordionItem>
+            ))}
+          </Accordion>
+        </FadeIn>
       </Container>
       <div id='contact'></div>
       <Container className='py-12'>
-        <Title>{formTitleContent.title}</Title>
-        <ContactForm />
+        <FadeIn>
+          <Title>{formTitleContent.title}</Title>
+        </FadeIn>
+        <FadeIn option={{threshold: 0.1, triggerOnce: true}}>
+          <ContactForm />
+        </FadeIn>
       </Container>
     </Layout>
   )

@@ -1,4 +1,5 @@
 import Button from "src/components/atoms/Button"
+import FadeIn from "src/components/parts/FadeIn"
 
 const FVContents = () => {
   const width = '92%'
@@ -33,18 +34,20 @@ const FVContents = () => {
       `}</style>
       <div className='flex items-center justify-center p-8 h-full'>
         <div>
-          <div className='wrapper relative'>
-            <div className="relative z-10">
-              <div className="mb-4">
+          <FadeIn>
+            <div className='wrapper relative'>
+              <div className="relative z-10">
                 <div className="mb-4">
-                  <div className="font-bold text-center">＼楽しく学ぶ／</div>
-                  <div className='text-2xl md:text-4xl font-bold text-center'>ドローン<span className="text-xl">×</span>プログラミング</div>
-                  <div className="text-center font-bold">を体験しよう！</div>
+                  <div className="mb-4">
+                    <div className="font-bold text-center">＼楽しく学ぶ／</div>
+                    <div className='text-2xl md:text-4xl font-bold text-center'>ドローン<span className="text-xl">×</span>プログラミング</div>
+                    <div className="text-center font-bold">を体験しよう！</div>
+                  </div>
+                  <div className="text-center font-bold">セレクト塾生の小～高校生だけの<br />特別イベント開催！</div>
                 </div>
-                <div className="text-center font-bold">セレクト塾生の小～高校生だけの<br />特別イベント開催！</div>
               </div>
             </div>
-          </div>
+          </FadeIn>
           <div className='text-center mt-20'><Button href='#info'>ドローンイベントの詳細を見る</Button></div>
         </div>
       </div>
