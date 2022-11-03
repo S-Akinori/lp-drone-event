@@ -43,7 +43,7 @@ const FVContents = () => {
                     <div className='text-2xl md:text-4xl font-bold text-center'>ドローン<span className="text-xl">×</span>プログラミング</div>
                     <div className="text-center font-bold">を体験しよう！</div>
                   </div>
-                  <div className="text-center font-bold">セレクト塾生の小学生～高校生だけの<br />特別イベント開催！</div>
+                  <div className="text-center font-bold"><span className="text-accent text-xl border-b-2 border-black">先着20名限定！</span><br />セレクト塾生の小学生～高校生だけの<br />特別イベント開催！</div>
                 </div>
               </div>
             </div>
