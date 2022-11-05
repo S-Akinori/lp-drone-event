@@ -72,6 +72,7 @@ img {
 
 button:disabled {
   background: #acacac;
+  box-shadow: none;
   color: #FFF;
 }
 button:disabled:hover {
