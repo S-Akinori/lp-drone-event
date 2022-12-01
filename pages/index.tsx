@@ -135,6 +135,7 @@ const Home: NextPage = () => {
         <FadeIn>
           <Title>{formTitleContent.title}</Title>
         </FadeIn>
+        <div className='mb-4 text-center'>イベントの募集は終了しました。</div>
         <FadeIn option={{threshold: 0.1, triggerOnce: true}}>
           <ContactForm />
         </FadeIn>

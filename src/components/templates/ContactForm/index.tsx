@@ -51,7 +51,8 @@ const ContactForm = () => {
       <div className="text-center mb-4">確認画面はございませんので、もう一度入力内容をご確認ください。</div>
       {state == 'success' && <div className="mb-4 p-4 border border-main">お問い合わせを受け付けました。info@drone-programming.impre.jpよりメールが送信されるのでご確認お願いします。メールが届かない場合、お手数ですがinfo@drone-programming.impre.jpへお問い合わせください。</div>}
       {state == 'error' && <div className="mb-4 p-4 border border-main">エラーが発生しました。お手数ですが、お時間を空けて再度お申込みください</div>}
-      <div className="text-center"><Button type="submit" disabled={state !== 'ready'}>{state == 'ready' && '申し込む'}{state == 'sending' && <Spinner />}{state == 'success' && '申し込み完了'}</Button></div>
+      <div className="text-center"><Button type="submit" disabled={true}>{state == 'ready' && '申し込む'}{state == 'sending' && <Spinner />}{state == 'success' && '申し込み完了'}</Button></div>
+      {/* <div className="text-center"><Button type="submit" disabled={state !== 'ready'}>{state == 'ready' && '申し込む'}{state == 'sending' && <Spinner />}{state == 'success' && '申し込み完了'}</Button></div> */}
     </form>
   )
 }
